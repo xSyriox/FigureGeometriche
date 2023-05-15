@@ -27,5 +27,11 @@ class CerchioTest {
 		assertTrue(this.cerchio.getCentro().equals(centro));
 		
 	}
+	@Test
+	void testCerchioasPunto() {
+		assertNotEquals(new Cerchio(new Punto(0, 0), 1), new Punto(0, 0));
+		assertEquals(new Cerchio(new Punto(0, 0), 0), new Punto(0, 0));
+		
+	}
 
 }

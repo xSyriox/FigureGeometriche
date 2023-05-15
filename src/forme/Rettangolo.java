@@ -17,12 +17,28 @@ public class Rettangolo implements Forma{
 	public int getBase() { return this.base; }
 	public int getAltezza() { return this.altezza; }
 	
+	@Override
 	public boolean equals(Object forma) {
 		Rettangolo rect=(Rettangolo)forma;
 		if(this.vertice.equals(rect.getVertice()) && this.altezza==rect.getAltezza() && this.base==rect.getBase()) {
 			return true;
 		}
 		else return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getAltezza()+this.getBase()+this.getVertice().hashCode()+this.getClass().hashCode();
+	}
+	@Override
+	public boolean isDegenere() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public Punto getPuntoDegenere() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
